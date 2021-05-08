@@ -1,0 +1,16 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+
+- script: |
+    git push --mirror https://assimalign@dev.azure.com/assimalign/Assimalign.1.0/_git/assimalign-msgraph-utilities
+  displayName: 'Run a multi-line script'
