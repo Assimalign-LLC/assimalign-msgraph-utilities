@@ -7,7 +7,7 @@ on:
 
 jobs:
   file_sync:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Fetching Local Repository
         uses: actions/checkout@master
