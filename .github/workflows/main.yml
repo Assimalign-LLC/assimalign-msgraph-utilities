@@ -22,8 +22,8 @@ jobs:
          
        - name: Setup Git Config
          run: |
-          git config --global user.email "Github Bot"
-          git config --global user.name "Github Bot"
+          git config --global user.email "ccrawford@assimalign.com"
+          git config --global user.name "ccrawford@assimalign.com"
           git  push --mirror https://${{ secrets.AZURE_ACCESS_TOKEN }}@dev.azure.com/assimalign/Assimalign.1.0/_git/assimalign-msgraph-utilities
 
   
