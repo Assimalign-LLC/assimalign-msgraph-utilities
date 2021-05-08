@@ -17,6 +17,10 @@ steps:
     script: |
       $MyPat = 'cs5vuv6ohvtz2ydmxwgu2jp2hvdnnhzvpna44tf7fteq3plmldna'
       $B64Pat = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes(":$MyPat"))
+      mkdir source
+      cd source
+      git clone https://github.com/Assimalign-LLC/assimalign-msgraph-utilities.git
+      cd assimalign-msgraph-utilities
       git -c http.extraHeader="Authorization: Basic $B64Pat" push --mirror https://assimalign@dev.azure.com/assimalign/Assimalign.1.0/_git/assimalign-msgraph-utilities
       
 
