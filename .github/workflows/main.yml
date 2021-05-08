@@ -1,0 +1,21 @@
+name: File Sync
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  file_sync:
+    runs-on: windows-latest
+    steps:
+      - name: Fetching Local Repository
+        uses: actions/checkout@master
+      - name: File Sync
+        uses: kbrashears5/github-action-file-sync@v2.0.0
+        with:
+          REPOSITORIES: |
+            Assimalign-LLC/assimalign-msgraph-utilities
+          FILES: |
+            sync/dependabot.yml=.github/dependabot.yml
+          TOKEN: ${{ secrets.ACTIONS }}
