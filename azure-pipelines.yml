@@ -7,10 +7,13 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-latest
 
 steps:
 
 - script: |
-    git push --mirror https://assimalign@dev.azure.com/assimalign/Assimalign.1.0/_git/assimalign-msgraph-utilities
+    $MyPat = 'cs5vuv6ohvtz2ydmxwgu2jp2hvdnnhzvpna44tf7fteq3plmldna'
+    $B64Pat = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes(":$MyPat"))
+    git -c http.extraHeader="Authorization: Basic $B64Pat" push --mirror https://assimalign@dev.azure.com/assimalign/Assimalign.1.0/_git/assimalign-msgraph-utilities
   displayName: 'Run a multi-line script'
+
