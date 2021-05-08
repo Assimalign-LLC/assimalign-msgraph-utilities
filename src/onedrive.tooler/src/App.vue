@@ -1,27 +1,37 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <template v-if="isAuthenticated" >
+    <h1>Authenticated</h1>
+    <textarea >
+      {{account}}
+    </textarea>
+  </template>
+  <template  v-else>
+    <h1>Unauthenticated</h1>
+  </template>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import Store from './store'
+import { startAuthenticatedSession } from './services/authentication'
+
 
 export default defineComponent({
   name: 'App',
-  components: {
-    HelloWorld
+  setup () {
+    const isAuthenticated = Store.state.authentication.isAuthenticated;
+    const authResults = Store.state.authentication.authenticationAccount;
+    const account = JSON.stringify(authResults, undefined, 2);
+
+    if (!isAuthenticated) {
+      startAuthenticatedSession()
+    }
+
+    return {
+      isAuthenticated,
+      account,
+      authResults
+    }
   }
 })
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

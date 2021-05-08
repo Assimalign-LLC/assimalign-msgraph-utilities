@@ -3,7 +3,7 @@ using System.IO;
 using Microsoft.Net.Http.Headers;
 
 
-namespace Assimalign.OneDrive.Tooler.Extensions
+namespace Assimalign.Msgraph.Server.Extensions
 {
     public static class MultipartRequestHelper
     {

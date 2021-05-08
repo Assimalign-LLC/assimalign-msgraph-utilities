@@ -19,10 +19,10 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 
-namespace Assimalign.OneDrive.Tooler
+namespace Assimalign.Msgraph.Server
 {
-    using Assimalign.OneDrive.Tooler.Options;
-    using Assimalign.OneDrive.Tooler.Attributes;
+    using Assimalign.Msgraph.Server.Options;
+    using Assimalign.Msgraph.Server.Attributes;
     using Microsoft.AspNetCore.Http.Features;
     using Microsoft.Extensions.FileProviders;
 

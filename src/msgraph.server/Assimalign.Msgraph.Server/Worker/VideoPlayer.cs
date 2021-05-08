@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 
 
-namespace Assimalign.OneDrive.Tooler.Worker
+namespace Assimalign.Msgraph.Server.Worker
 {
     public class VideoPlayer : BackgroundService
     {

@@ -4,9 +4,6 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-	<!--<ItemGroup>
-		<FrameworkReference Include="Microsoft.NET.Sdk.Worker" />
-	</ItemGroup>-->
 
   <ItemGroup>
     <PackageReference Include="Assimalign.AspNetCore.Mvc" Version="5.0.7" />

@@ -15,12 +15,12 @@ using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Http;
 
-namespace Assimalign.OneDrive.Tooler.Controllers
+namespace Assimalign.Msgraph.Server.Controllers
 {
-    using Assimalign.OneDrive.Tooler.Options;
-    using Assimalign.OneDrive.Tooler.Abstraction;
-    using Assimalign.OneDrive.Tooler.Attributes;
-    using Assimalign.OneDrive.Tooler.Extensions;
+    using Assimalign.Msgraph.Server.Options;
+    using Assimalign.Msgraph.Server.Abstraction;
+    using Assimalign.Msgraph.Server.Attributes;
+    using Assimalign.Msgraph.Server.Extensions;
     using Assimalign.AspNetCore.Mvc.JsonApi;
     using Assimalign.AspNetCore.Mvc.JsonApi.Generics;
 

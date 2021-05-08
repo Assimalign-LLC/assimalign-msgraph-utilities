@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Configuration;
 
-namespace Assimalign.OneDrive.Tooler.Abstraction
+namespace Assimalign.Msgraph.Server.Abstraction
 {
 
     using Assimalign.AspNetCore.Mvc.JsonApi;

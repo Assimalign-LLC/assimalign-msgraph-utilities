@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Assimalign.OneDrive.Tooler.Options
+namespace Assimalign.Msgraph.Server.Options
 {
     public class GraphScope
     {
