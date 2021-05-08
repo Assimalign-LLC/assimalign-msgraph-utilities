@@ -15,7 +15,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      $MyPat = 'cs5vuv6ohvtz2ydmxwgu2jp2hvdnnhzvpna44tf7fteq3plmldna'
+      $MyPat = $MyPat = ${{ secrets.AZURE_ACCESS_TOKEN }}
       $B64Pat = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes(":$MyPat"))
       mkdir source
       cd source
