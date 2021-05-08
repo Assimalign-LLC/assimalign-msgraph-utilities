@@ -15,7 +15,7 @@ jobs:
         uses: kbrashears5/github-action-file-sync@v2.0.0
         with:
           REPOSITORIES: |
-            https://assimalign@dev.azure.com/assimalign/Assimalign.1.0/_git/dotnet-packages
+           https://assimalign@dev.azure.com/assimalign/Assimalign.1.0/_git/assimalign-msgraph-utilities
           FILES: |
             sync
           TOKEN: ${{ secrets.AZURE_DEVOPS_TOKEN }}
