@@ -18,7 +18,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      $MyPat = $(access.token)
+      $MyPat = '$(access.token)''
       $B64Pat = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes(":$MyPat"))
       mkdir source
       cd source
