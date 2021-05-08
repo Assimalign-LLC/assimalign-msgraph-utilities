@@ -9,13 +9,16 @@ trigger:
 pool:
   vmImage: windows-latest
 
+variables:
+- group: assimalign.github
+
 steps:
 
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
     script: |
-      $MyPat = $MyPat = ${{ secrets.AZURE_ACCESS_TOKEN }}
+      $MyPat = $(access.token)
       $B64Pat = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes(":$MyPat"))
       mkdir source
       cd source
