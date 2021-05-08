@@ -22,5 +22,8 @@ jobs:
          
        - name: Setup Git Config
          run: |
-          git push --mirror https://assimalign@dev.azure.com/assimalign/Assimalign.1.0/_git/assimalign-msgraph-utilities
+          MY_PAT=${{ secrets.AZURE_ACCESS_TOKEN }}
+          B64_PAT=$(printf "%s"":$MY_PAT" | base64)
+          git -c http.extraHeader="Authorization: Basic ${B64_PAT}" push --mirror https://assimalign@dev.azure.com/assimalign/Assimalign.1.0/_git/assimalign-msgraph-utilities
 
+  
