@@ -3,25 +3,31 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- main
+# trigger:
+# - main
 
-pool:
-  vmImage: windows-latest
+# pool:
+#   vmImage: windows-latest
 
-variables:
-- group: assimalign.github
+# variables:
+# - group: assimalign.github
 
-steps:
+# steps:
 
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: |
-      $MyPat = '$(access.token)'
-      $B64Pat = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes(":$MyPat"))
-      mkdir source
-      cd source
-      git clone https://github.com/Assimalign-LLC/assimalign-msgraph-utilities.git --branch main
-      cd assimalign-msgraph-utilities
-      git -c http.extraHeader="Authorization: Basic $B64Pat" push --mirror https://assimalign@dev.azure.com/assimalign/Assimalign.1.0/_git/assimalign-msgraph-utilities
+# - task: PowerShell@2
+#   inputs:
+#     targetType: 'inline'
+#     script: |
+#       $MyPat = '$(access.token)'
+#       $B64Pat = [Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes(":$MyPat"))
+#       mkdir source
+#       cd source
+#       git clone https://github.com/Assimalign-LLC/assimalign-msgraph-utilities.git --branch main
+#       cd assimalign-msgraph-utilities
+#       git -c http.extraHeader="Authorization: Basic $B64Pat" push --mirror https://assimalign@dev.azure.com/assimalign/Assimalign.1.0/_git/assimalign-msgraph-utilities
+
+
+# git remote remove origin 
+# git remote add origin https://github.com/Assimalign-LLC/assimalign-msgraph-utilities.git
+# git remote set-url --push --add origin https://github.com/Assimalign-LLC/assimalign-msgraph-utilities.git
+# git remote set-url --push --add origin https://assimalign@dev.azure.com/assimalign/Assimalign.1.0/_git/assimalign-msgraph-utilities
