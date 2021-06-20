@@ -175,9 +175,11 @@ namespace Assimalign.Msgraph.Server.Controllers
         {
             try
             {
+
+                //Client.Users[user].Drive.Root.ItemWithPath("").Children
                 var items = await Client.Users[user].Drive.Root.ItemWithPath(".assimalign.apps/.videos").Children.Request().GetAsync();
 
-                return OkObjectResponse.Create(items.CurrentPage);
+                return OkObjectResponse.Create<DriveItem>(items.CurrentPage, id=>id.Id);
             }
             catch(Exception exception)
             {
@@ -185,16 +187,5 @@ namespace Assimalign.Msgraph.Server.Controllers
             }
         }
        
-
-
-        //[HttpGet("user/drive/{item}")]
-        //public async Task<IActionResult> GetVideoContentAsync()
-        //{
-
-        //}
-
-
-
-        
     }
 }

@@ -1,5 +1,5 @@
 <template>
-  <template v-if="isAuthenticated" >
+  <template v-if="get()" >
     <h1>Authenticated</h1>
     <textarea >
       {{account}}
@@ -12,25 +12,30 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Store from './store'
+import { Store } from 'vuex'
 import { startAuthenticatedSession } from './services/authentication'
+import { useStore } from 'vuex';
 
 
 export default defineComponent({
   name: 'App',
   setup () {
-    const isAuthenticated = Store.state.authentication.isAuthenticated;
+
+    
     const authResults = Store.state.authentication.authenticationAccount;
     const account = JSON.stringify(authResults, undefined, 2);
 
-    if (!isAuthenticated) {
-      startAuthenticatedSession()
-    }
+
 
     return {
-      isAuthenticated,
       account,
       authResults
+    }
+  },
+
+  methods: {
+    get(){
+      return this.authentication.isAuthenticated
     }
   }
 })
